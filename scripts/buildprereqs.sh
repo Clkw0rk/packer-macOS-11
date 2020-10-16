@@ -3,6 +3,13 @@ set -euo pipefail
 IFS=$'\n\t'
 shopt -s nullglob nocaseglob
 
+# build the installer dmg
+cd submodules/macadmin-scripts/
+sudo rm Install_macOS*.dmg || true
+echo "Start OS installer download."
+sudo ./installinstallmacos.py --seedprogram DeveloperSeed --beta --version 11.0
+cd ../../
+
 # mount the installer dmg
 # setup gitignore for install_bits dir
 
