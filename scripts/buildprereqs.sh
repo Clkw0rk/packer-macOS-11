@@ -8,6 +8,7 @@ cd submodules/macadmin-scripts/
 sudo rm Install_macOS*.dmg || true
 echo "Start OS installer download."
 sudo ./installinstallmacos.py --seedprogram DeveloperSeed --beta --version 11.0
+sleep 60
 cd ../../
 
 # mount the installer dmg
