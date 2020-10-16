@@ -3,6 +3,10 @@
 all:
 	echo >&2 "Must specify target."
 
+# submodule refresh
+submodules:
+	sh scripts/submodules.sh
+
 # use forked installinstallmacos.py to specify beta seed and 11.0 installer
 download_installer:
 	python submodules/macadmin-scripts/installinstallmacos.py --seedprogram DeveloperSeed --beta --version 11.0
