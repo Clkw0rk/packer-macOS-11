@@ -100,8 +100,8 @@ source "vmware-iso" "macOS_11_base" {
   iso_url              = "install_bits/macOS_1100_installer.iso"
   iso_checksum         = "file:install_bits/macOS_1100_installer.shasum"
   output_directory     = "output/{{build_name}}"
-  ssh_username         = "packer"
-  ssh_password         = "packer"
+  ssh_username         = "vagrant"
+  ssh_password         = "vagrant"
   shutdown_command     = "sudo shutdown -h now"
   guest_os_type        = "darwin20-64"
   cdrom_adapter_type   = "sata"
@@ -130,7 +130,8 @@ source "vmware-iso" "macOS_11_base" {
     "<enter>",
     "<leftSuperon><f5><leftSuperoff><wait10>",
     "curl -o /var/root/packer.pkg http://{{ .HTTPIP }}:{{ .HTTPPort }}/packer.pkg<enter>",
-    "curl -o /var/root/setupsshlogin.pkg http://{{ .HTTPIP }}:{{ .HTTPPort }}/setupsshlogin.pkg<enter>",
+    "curl -o /var/root/vagrant.pkg http://{{ .HTTPIP }}:{{ .HTTPPort }}/vagrant.pkg<enter>",
+    "curl -o /var/root/setupsshlogin_dist.pkg http://{{ .HTTPIP }}:{{ .HTTPPort }}/setupsshlogin_dist.pkg<enter>",
     "curl -o /var/root/bootstrap.sh http://{{ .HTTPIP }}:{{ .HTTPPort }}/bootstrap.sh<enter>",
     "chmod +x /var/root/bootstrap.sh<enter>",
     "/var/root/bootstrap.sh<enter>"
