@@ -7,7 +7,7 @@ shopt -s nullglob nocaseglob
 cd submodules/macadmin-scripts/
 sudo rm Install_macOS*.dmg || true
 echo "Start OS installer download."
-sudo ./installinstallmacos.py --seedprogram DeveloperSeed --beta --version 11.0
+sudo ./installinstallmacos.py --seedprogram DeveloperSeed --beta --version 11.0.1
 sleep 60
 cd ../../
 
@@ -24,7 +24,7 @@ echo 1 | ./submodules/create_macos_vm_install_dmg/create_macos_vm_install_dmg.sh
 hdiutil detach install_bits/dmg -force
 
 # cleanup dmg of installer
-rm install_bits/macOS_1100_installer.dmg
+eval rm install_bits/macOS_1100_installer.dmg
 
 # output shasum
 echo "Updating the shasum file"

@@ -7,10 +7,6 @@ all:
 submodules:
 	sh scripts/submodules.sh
 
-# use forked installinstallmacos.py to specify beta seed and 11.0 installer
-download_installer:
-	python submodules/macadmin-scripts/installinstallmacos.py --seedprogram DeveloperSeed --beta --version 11.0
-
 # Create an iso of the macOS instaler to use with vmware
 prereqs:
 	sh scripts/buildprereqs.sh
